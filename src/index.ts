@@ -33,9 +33,11 @@ class Layer {
       this.parent.children = this;
 
       this.weights = zeros(neuronsNumber, parent.neuronsNumber).map(
-       ()=>4* Math.random()-2
+        () => 4 * Math.random() - 2
       ) as Matrix;
-      this.bias = zeros(neuronsNumber, 1).map(()=>4*Math.random()-2) as Matrix;
+      this.bias = zeros(neuronsNumber, 1).map(
+        () => 4 * Math.random() - 2
+      ) as Matrix;
     } else {
       this.parent = null;
     }
@@ -68,7 +70,7 @@ class Layer {
       return elem * derivativeData.get(pos);
     });
 
-    this.bias = add(this.bias, multiply(2,deltaArg));
+    this.bias = add(this.bias, multiply(2, deltaArg));
 
     const deltaWeights = multiply(deltaArg, transpose(this.lastInput));
     const additionalDelta = this.prevDeltaWeights
@@ -124,11 +126,11 @@ class Network {
 
 const net = new Network(2);
 
-net.createLayer(2);
+net.createLayer(4);
 
 net.createLayer(1);
 
-for (let i = 0; i < 4000; ++i) {
+for (let i = 0; i < 1000; ++i) {
   net.train(xorData);
 }
 
