@@ -1,5 +1,5 @@
 import { matrix } from "mathjs";
-import { TruthyData } from "../types/data";
+import { TruthyData } from "../data.types";
 
 export const xorData: TruthyData = [
   { input: matrix([[0], [0]]), output: matrix([0]) },
