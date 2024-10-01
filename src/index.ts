@@ -5,7 +5,7 @@ import { xorData } from "./data/xor/xor.data";
 const net = new Network(2);
 
 net.createLayer(4);
-
+net.createLayer(4);
 net.createLayer(1);
 
 for (let i = 0; i < 1000; ++i) {
